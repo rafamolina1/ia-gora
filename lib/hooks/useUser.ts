@@ -54,9 +54,17 @@ async function loadProfile(user: User | null): Promise<UseUserState> {
   }
 
   const response = await fetch("/api/perfil", { cache: "no-store" }).catch(() => null);
-  const payload = response?.ok
-    ? ((await response.json().catch(() => null)) as { perfil?: Perfil } | null)
-    : null;
+
+  if (!response?.ok) {
+    await createClient().auth.signOut().catch(() => undefined);
+    return {
+      user: null,
+      profile: null,
+      loading: false,
+    };
+  }
+
+  const payload = (await response.json().catch(() => null)) as { perfil?: Perfil } | null;
 
   return {
     user,

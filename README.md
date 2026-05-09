@@ -15,6 +15,7 @@ O **IAgora** resolve uma situação comum da rotina: olhar para os ingredientes 
 Além do gerador, o projeto evolui essa experiência para uma comunidade de receitas: usuários podem publicar pratos, navegar por um feed público, seguir perfis, curtir, salvar e comentar receitas.
 
 ## Preview
+https://ia-gora-teal.vercel.app/
 
 ### Gerador de receitas
 

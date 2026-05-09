@@ -1,0 +1,46 @@
+{
+  "name": "iagora",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "rm -f public/sw.js public/workbox-*.js && next dev --webpack",
+    "build": "next build --webpack",
+    "start": "next start",
+    "lint": "eslint ."
+  },
+  "dependencies": {
+    "@dnd-kit/core": "^6.3.1",
+    "@dnd-kit/sortable": "^10.0.0",
+    "@dnd-kit/utilities": "^3.2.2",
+    "@hookform/resolvers": "^3.10.0",
+    "@supabase/ssr": "^0.5.2",
+    "@supabase/supabase-js": "^2.49.8",
+    "clsx": "^2.1.1",
+    "date-fns": "^4.1.0",
+    "framer-motion": "^12.10.0",
+    "groq-sdk": "^0.25.0",
+    "lucide-react": "^0.511.0",
+    "next": "^16.2.4",
+    "react": "^19.2.1",
+    "react-dom": "^19.2.1",
+    "react-hook-form": "^7.56.4",
+    "sharp": "^0.34.1",
+    "tailwind-merge": "^3.3.0",
+    "zod": "^3.24.4",
+    "zustand": "^5.0.4"
+  },
+  "devDependencies": {
+    "@types/node": "^20.17.50",
+    "@types/react": "^19.2.14",
+    "@types/react-dom": "^19.2.3",
+    "autoprefixer": "^10.4.21",
+    "eslint": "^9.39.1",
+    "eslint-config-next": "^16.2.4",
+    "postcss": "^8.5.10",
+    "tailwindcss": "^3.4.17",
+    "typescript": "^5.8.3"
+  },
+  "overrides": {
+    "postcss": "^8.5.10"
+  }
+}

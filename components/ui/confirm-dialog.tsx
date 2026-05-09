@@ -15,6 +15,8 @@ interface ConfirmDialogProps {
   confirmLabel: string;
   cancelLabel?: string;
   loading?: boolean;
+  confirmDisabled?: boolean;
+  children?: React.ReactNode;
   onConfirm: () => void;
   onCancel: () => void;
 }
@@ -26,6 +28,8 @@ export function ConfirmDialog({
   confirmLabel,
   cancelLabel = "Cancelar",
   loading = false,
+  confirmDisabled = false,
+  children,
   onConfirm,
   onCancel,
 }: ConfirmDialogProps) {
@@ -111,6 +115,8 @@ export function ConfirmDialog({
               </button>
             </div>
 
+            {children ? <div className="mt-5">{children}</div> : null}
+
             <div className="mt-6 flex flex-col-reverse gap-2 sm:flex-row sm:justify-end">
               <Button
                 ref={cancelRef}
@@ -128,7 +134,7 @@ export function ConfirmDialog({
                   "h-11 bg-danger px-4 shadow-[0_8px_18px_rgba(220,38,38,0.20)] hover:bg-red-700",
                   "disabled:bg-text-tertiary disabled:opacity-70 disabled:shadow-none",
                 )}
-                disabled={loading}
+                disabled={loading || confirmDisabled}
                 onClick={onConfirm}
               >
                 {confirmLabel}

@@ -6,6 +6,7 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import { ImagePlus, X } from "lucide-react";
 import { useForm, useWatch } from "react-hook-form";
 
+import { BotaoExcluirConta } from "@/components/perfil/BotaoExcluirConta";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
@@ -177,6 +178,20 @@ export function FormEditarPerfil({ perfil }: FormEditarPerfilProps) {
           {isSubmitting ? "Salvando..." : "Salvar alterações"}
         </Button>
       </div>
+
+      <div className="hairline-divider" />
+
+      <section className="rounded-lg border border-danger/20 bg-danger/5 p-4">
+        <div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
+          <div>
+            <h2 className="text-base font-semibold text-danger">Excluir conta</h2>
+            <p className="mt-1 text-sm leading-6 text-text-secondary">
+              Remove permanentemente seu perfil e os dados associados à conta.
+            </p>
+          </div>
+          <BotaoExcluirConta username={perfil.username} />
+        </div>
+      </section>
     </form>
   );
 }
